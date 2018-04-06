@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\ecsx\System.h" />
+    <ClInclude Include="..\..\..\include\ecsx\World.h" />
+    <ClInclude Include="..\..\..\include\ecsx\Config.h" />
+    <ClInclude Include="..\..\..\include\ecsx\Entity.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\EntityId.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\EntityIdPool.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\Component.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\ComponentPool.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\CompDenseStorage.h">
+      <Filter>component\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\CompSparseStorage.h">
+      <Filter>component\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\IComponentsStorage.h">
+      <Filter>component\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\CompStorageType.h">
+      <Filter>component\storage</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\World.cpp" />
+    <ClCompile Include="..\..\..\source\Entity.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\EntityIdPool.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\ComponentPool.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="entity">
+      <UniqueIdentifier>{e8db189c-a52d-4913-b1ed-fd23152b8013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component">
+      <UniqueIdentifier>{1d3f98c8-d3fd-4a8e-b934-d366ff0bb60f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\storage">
+      <UniqueIdentifier>{8ef42e2a-0041-4a55-b186-9acd2cceb490}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\include\ecsx\EntityIdPool.inl">
+      <Filter>entity</Filter>
+    </None>
+    <None Include="..\..\..\include\ecsx\Entity.inl">
+      <Filter>entity</Filter>
+    </None>
+    <None Include="..\..\..\include\ecsx\ComponentPool.inl">
+      <Filter>component</Filter>
+    </None>
+    <None Include="..\..\..\include\ecsx\World.inl" />
+    <None Include="..\..\..\include\ecsx\CompSparseStorage.inl">
+      <Filter>component\storage</Filter>
+    </None>
+    <None Include="..\..\..\include\ecsx\CompDenseStorage.inl">
+      <Filter>component\storage</Filter>
+    </None>
+  </ItemGroup>
+</Project>
