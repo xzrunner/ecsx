@@ -41,7 +41,7 @@ struct Position : public ecsx::Component
 TEST_CASE("test component dense") {
 	ecsx::World world;
 
-	world.SetCompStorage<Position>(ecsx::detail::COMP_STORAGE_DENSE);
+	world.SetCompStorage<Position>(ecsx::COMP_STORAGE_DENSE);
 
 	auto e0 = world.CreateEntity();
 	auto& comp = e0.AddComponent<Position>(1.0f, 2.0f);
@@ -60,7 +60,7 @@ TEST_CASE("test component dense") {
 TEST_CASE("test component sparse") {
 	ecsx::World world;
 
-	world.SetCompStorage<Position>(ecsx::detail::COMP_STORAGE_SPARSE);
+	world.SetCompStorage<Position>(ecsx::COMP_STORAGE_SPARSE);
 
 	auto e0 = world.CreateEntity();
 	auto& comp = e0.AddComponent<Position>(1.0f, 2.0f);

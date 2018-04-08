@@ -34,7 +34,7 @@ public:
 	T& GetComponent(EntityId id) const;
 
 	template <typename T>
-	void SetCompStorage(detail::CompStorageType type);
+	void SetCompStorage(CompStorageType type);
 
 //	void Clear();
 

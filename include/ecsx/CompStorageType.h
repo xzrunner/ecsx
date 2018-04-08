@@ -2,8 +2,6 @@
 
 namespace ecsx
 {
-namespace detail
-{
 
 enum CompStorageType
 {
@@ -12,5 +10,4 @@ enum CompStorageType
 
 }; // CompStorageType
 
-}
 }

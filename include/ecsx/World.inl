@@ -28,7 +28,7 @@ T& World::GetComponent(EntityId id) const
 }
 
 template <typename T>
-void World::SetCompStorage(detail::CompStorageType type)
+void World::SetCompStorage(CompStorageType type)
 {
 	static_assert(std::is_base_of<Component, T>::value,
 		"T must inherit from Component");
