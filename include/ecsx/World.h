@@ -1,8 +1,9 @@
 #pragma once
 
-#include "ecsx/EntityIdPool.h"
+#include "ecsx/EntityPool.h"
 #include "ecsx/ComponentPool.h"
 #include "ecsx/CompStorageType.h"
+#include "ecsx/Entity.h"
 
 #include <boost/noncopyable.hpp>
 
@@ -11,8 +12,6 @@
 namespace ecsx
 {
 
-class Entity;
-
 class World : boost::noncopyable
 {
 public:
@@ -20,18 +19,18 @@ public:
 
 	Entity CreateEntity();
 
-	bool IsIdValid(EntityId id) const {
-		return m_id_pool.IsValid(id);
+	bool IsIdValid(Entity e) const {
+		return m_id_pool.IsValid(e);
 	}
 
 	template <typename T>
-	bool HasComponent(EntityId id) const;
+	bool HasComponent(Entity e) const;
 
 	template <typename T, typename... Args>
 	T& AddComponent(Args&&... args);
 
 	template <typename T>
-	T& GetComponent(EntityId id) const;
+	T& GetComponent(Entity e) const;
 
 	template <typename T>
 	void SetCompStorage(CompStorageType type);
@@ -39,7 +38,7 @@ public:
 //	void Clear();
 
 private:
-	detail::EntityIdPool m_id_pool;
+	detail::EntityPool m_id_pool;
 
 	detail::ComponentPool m_comp_pool;
 	

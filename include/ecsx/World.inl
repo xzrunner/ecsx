@@ -4,11 +4,11 @@ namespace ecsx
 {
 
 template <typename T>
-inline bool World::HasComponent(EntityId id) const
+inline bool World::HasComponent(Entity e) const
 {
 	static_assert(std::is_base_of<Component, T>::value,
 		"T must inherit from Component");
-	return m_comp_pool.HasComponent<T>(id);
+	return m_comp_pool.HasComponent<T>(e);
 }
 
 template <typename T, typename... Args>
@@ -20,11 +20,11 @@ inline T& World::AddComponent(Args&&... args)
 }
 
 template <typename T>
-T& World::GetComponent(EntityId id) const
+T& World::GetComponent(Entity e) const
 {
 	static_assert(std::is_base_of<Component, T>::value,
 		"T must inherit from Component");
-	return m_comp_pool.GetComponent<T>(id);
+	return m_comp_pool.GetComponent<T>(e);
 }
 
 template <typename T>

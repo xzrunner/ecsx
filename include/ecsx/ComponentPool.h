@@ -1,7 +1,6 @@
 #pragma once
 
-#include "ecsx/Config.h"
-#include "ecsx/EntityId.h"
+#include "ecsx/Entity.h"
 #include "ecsx/Component.h"
 #include "ecsx/CompStorageType.h"
 
@@ -24,13 +23,13 @@ public:
 	ComponentPool();
 
 	template <typename T>
-	bool HasComponent(EntityId id) const;
+	bool HasComponent(Entity e) const;
 
 	template <typename T, typename... Args>
-	T& AddComponent(EntityId id, Args&&... args);
+	T& AddComponent(Entity e, Args&&... args);
 
 	template <typename T>
-	T& GetComponent(EntityId id) const;
+	T& GetComponent(Entity e) const;
 
 	template <typename T>
 	void SetStorage(CompStorageType type);

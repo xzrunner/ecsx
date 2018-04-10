@@ -18,24 +18,21 @@
     <ClInclude Include="..\..\..\include\ecsx\CompStorageType.h" />
     <ClInclude Include="..\..\..\include\ecsx\Config.h" />
     <ClInclude Include="..\..\..\include\ecsx\Entity.h" />
-    <ClInclude Include="..\..\..\include\ecsx\EntityId.h" />
-    <ClInclude Include="..\..\..\include\ecsx\EntityIdPool.h" />
+    <ClInclude Include="..\..\..\include\ecsx\EntityPool.h" />
     <ClInclude Include="..\..\..\include\ecsx\IComponentsStorage.h" />
     <ClInclude Include="..\..\..\include\ecsx\System.h" />
     <ClInclude Include="..\..\..\include\ecsx\World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\ComponentPool.cpp" />
-    <ClCompile Include="..\..\..\source\Entity.cpp" />
-    <ClCompile Include="..\..\..\source\EntityIdPool.cpp" />
+    <ClCompile Include="..\..\..\source\EntityPool.cpp" />
     <ClCompile Include="..\..\..\source\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\include\ecsx\CompDenseStorage.inl" />
     <None Include="..\..\..\include\ecsx\ComponentPool.inl" />
     <None Include="..\..\..\include\ecsx\CompSparseStorage.inl" />
-    <None Include="..\..\..\include\ecsx\Entity.inl" />
-    <None Include="..\..\..\include\ecsx\EntityIdPool.inl" />
+    <None Include="..\..\..\include\ecsx\EntityPool.inl" />
     <None Include="..\..\..\include\ecsx\World.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,40 +1,29 @@
 #pragma once
 
-#include "ecsx/EntityId.h"
-#include "ecsx/World.h"
-
-#include <boost/noncopyable.hpp>
+#include "ecsx/Config.h"
 
 namespace ecsx
 {
 
-class World;
-
-class Entity : boost::noncopyable
+struct Entity
 {
-public:
-	Entity(World* world, EntityId id);
-	Entity(const Entity& e);
-	Entity& operator = (const Entity& e);
+	Entity() : id(0) {}
 
-	bool IsValid() const;
+	bool operator == (const Entity& e) const {
+		return id == e.id;
+	}
 
-	template <typename T>
-	bool HasComponent() const;
+	bool IsNull() const { return id == 0; }
 
-	template <typename T, typename... Args>
-	T& AddComponent(Args&&... args);
-
-	template <typename T>
-	T& GetComponent() const;
-
-private:
-	World* m_world;
-
-	EntityId m_id;
+	union
+	{
+		struct {
+			ID_TYPE index   : ECSX_ENTITY_ID_INDEX_BIT_COUNT;
+			ID_TYPE version : ECSX_ENTITY_ID_VERSION_BIT_COUNT;
+		} u;
+		ID_TYPE id;
+	};
 
 }; // Entity
 
 }
-
-#include "ecsx/Entity.inl"

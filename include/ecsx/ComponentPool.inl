@@ -11,33 +11,33 @@ namespace detail
 {
 
 template <typename T>
-inline bool ComponentPool::HasComponent(EntityId id) const
+inline bool ComponentPool::HasComponent(Entity e) const
 {
-	return id.index >= 0 && id.index < m_masks.size() 
-		&& m_masks[id.index][GetComponentTypeID<T>()];
+	return e.u.index >= 0 && e.u.index < m_masks.size() 
+		&& m_masks[e.u.index][GetComponentTypeID<T>()];
 }
 
 template <typename T, typename... Args>
-inline T& ComponentPool::AddComponent(EntityId id, Args&&... args)
+inline T& ComponentPool::AddComponent(Entity e, Args&&... args)
 {
-	GD_ASSERT(!HasComponent<T>(id), "has comp");
+	GD_ASSERT(!HasComponent<T>(e), "has comp");
 
 	auto idx = GetComponentTypeID<T>();
 
-	m_masks.resize(std::max(id.index + 1, m_masks.size()));
-	m_masks[id.index].set(idx);
+	m_masks.resize(std::max(e.u.index + 1, m_masks.size()));
+	m_masks[e.u.index].set(idx);
 
 	auto storage = m_storage[idx];
 	T comp(std::forward<Args>(args)...);
-	storage->Add(id.index, &comp);
-	return *static_cast<T*>(storage->Get(id.index));
+	storage->Add(e.u.index, &comp);
+	return *static_cast<T*>(storage->Get(e.u.index));
 }
 
 template <typename T>
-T& ComponentPool::GetComponent(EntityId id) const
+T& ComponentPool::GetComponent(Entity e) const
 {
-	GD_ASSERT(HasComponent<T>(id), "no component");
-	return *reinterpret_cast<T*>(m_storage[GetComponentTypeID<T>()]->Get(id.index));
+	GD_ASSERT(HasComponent<T>(e), "no component");
+	return *reinterpret_cast<T*>(m_storage[GetComponentTypeID<T>()]->Get(e.u.index));
 }
 
 template <typename T>

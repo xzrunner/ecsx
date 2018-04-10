@@ -7,12 +7,6 @@
     <ClInclude Include="..\..\..\include\ecsx\Entity.h">
       <Filter>entity</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\EntityId.h">
-      <Filter>entity</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\EntityIdPool.h">
-      <Filter>entity</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\ecsx\Component.h">
       <Filter>component</Filter>
     </ClInclude>
@@ -31,17 +25,17 @@
     <ClInclude Include="..\..\..\include\ecsx\CompStorageType.h">
       <Filter>component\storage</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\ecsx\EntityPool.h">
+      <Filter>entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\World.cpp" />
-    <ClCompile Include="..\..\..\source\Entity.cpp">
-      <Filter>entity</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\source\EntityIdPool.cpp">
-      <Filter>entity</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\source\ComponentPool.cpp">
       <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\EntityPool.cpp">
+      <Filter>entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,12 +50,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\include\ecsx\EntityIdPool.inl">
-      <Filter>entity</Filter>
-    </None>
-    <None Include="..\..\..\include\ecsx\Entity.inl">
-      <Filter>entity</Filter>
-    </None>
     <None Include="..\..\..\include\ecsx\ComponentPool.inl">
       <Filter>component</Filter>
     </None>
@@ -71,6 +59,9 @@
     </None>
     <None Include="..\..\..\include\ecsx\CompDenseStorage.inl">
       <Filter>component\storage</Filter>
+    </None>
+    <None Include="..\..\..\include\ecsx\EntityPool.inl">
+      <Filter>entity</Filter>
     </None>
   </ItemGroup>
 </Project>

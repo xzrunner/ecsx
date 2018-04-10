@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ecsx/EntityId.h"
-
 namespace ecsx
 {
 namespace detail

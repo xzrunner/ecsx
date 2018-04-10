@@ -44,16 +44,16 @@ TEST_CASE("test component dense") {
 	world.SetCompStorage<Position>(ecsx::COMP_STORAGE_DENSE);
 
 	auto e0 = world.CreateEntity();
-	auto& comp = e0.AddComponent<Position>(1.0f, 2.0f);
+	auto& comp = world.AddComponent<Position>(e0, 1.0f, 2.0f);
 	REQUIRE(Approx(comp.x) == 1.0f);
 	REQUIRE(Approx(comp.y) == 2.0f);
 
-	auto& comp1 = e0.GetComponent<Position>();
+	auto& comp1 = world.GetComponent<Position>(e0);
 	REQUIRE(Approx(comp1.x) == 1.0f);
 	REQUIRE(Approx(comp1.y) == 2.0f);
 	
 	comp1.x = 3;
-	auto& comp2 = e0.GetComponent<Position>();
+	auto& comp2 = world.GetComponent<Position>(e0);
 	REQUIRE(Approx(comp1.x) == 3.0f);
 }
 
@@ -63,15 +63,15 @@ TEST_CASE("test component sparse") {
 	world.SetCompStorage<Position>(ecsx::COMP_STORAGE_SPARSE);
 
 	auto e0 = world.CreateEntity();
-	auto& comp = e0.AddComponent<Position>(1.0f, 2.0f);
+	auto& comp = world.AddComponent<Position>(e0, 1.0f, 2.0f);
 	REQUIRE(Approx(comp.x) == 1.0f);
 	REQUIRE(Approx(comp.y) == 2.0f);
 
-	auto& comp1 = e0.GetComponent<Position>();
+	auto& comp1 = world.GetComponent<Position>(e0);
 	REQUIRE(Approx(comp1.x) == 1.0f);
 	REQUIRE(Approx(comp1.y) == 2.0f);
 
 	comp1.x = 3;
-	auto& comp2 = e0.GetComponent<Position>();
+	auto& comp2 = world.GetComponent<Position>(e0);
 	REQUIRE(Approx(comp1.x) == 3.0f);
 }
