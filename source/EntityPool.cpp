@@ -15,9 +15,9 @@ Entity EntityPool::Create()
 	Entity e;
 	if (m_freelist.empty())
 	{
-		e.u.index = m_next_id++;
-		e.u.version = 1;
-		m_versions.push_back(e.u.version);
+		e.index = m_next_id++;
+		e.version = 1;
+		m_versions.push_back(e.version);
 	}
 	else
 	{
