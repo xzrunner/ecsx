@@ -12,6 +12,9 @@ struct Entity
 	bool operator == (const Entity& e) const {
 		return id == e.id;
 	}
+	bool operator != (const Entity& e) const {
+		return id != e.id;
+	}
 
 	bool IsNull() const { return id == 0; }
 
