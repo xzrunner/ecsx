@@ -6,12 +6,18 @@ namespace detail
 {
 
 template<typename T>
-void CompDenseStorage<T>::Add(const ID_TYPE& idx, void* data)
+void CompDenseStorage<T>::PushBack(const ID_TYPE& idx, void* data)
 {
 	if (idx >= m_buf.size()) {
 		m_buf.resize(idx + 1);
 	}
 	memcpy(&m_buf[idx], data, sizeof(T));
+}
+
+template<typename T>
+void CompDenseStorage<T>::Erase(const ID_TYPE& idx)
+{
+	// todo
 }
 
 template<typename T>
@@ -25,7 +31,7 @@ void* CompDenseStorage<T>::Get(const ID_TYPE& idx)
 }
 
 //template<typename T>
-//void CompDenseStorage<T>::Add(const ID_TYPE& idx, T&& v)
+//void CompDenseStorage<T>::PushBack(const ID_TYPE& idx, T&& v)
 //{
 //	if (idx >= m_buf.size()) {
 //		m_buf.resize(idx + 1);

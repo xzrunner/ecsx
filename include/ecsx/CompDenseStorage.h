@@ -12,9 +12,10 @@ template<typename T>
 class CompDenseStorage : public IComponentsStorage
 {
 public:
-	virtual void Add(const ID_TYPE& idx, void* data) override;
+	virtual void PushBack(const ID_TYPE& idx, void* data) override;
+	virtual void Erase(const ID_TYPE& idx) override;
 	virtual void* Get(const ID_TYPE& idx) override;
-	//virtual void Add(const ID_TYPE& idx, T&& v) override;
+	//virtual void PushBack(const ID_TYPE& idx, T&& v) override;
 	//virtual T* Get(const ID_TYPE& idx) override;
 	virtual void Clear() override;
 

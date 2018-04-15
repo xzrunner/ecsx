@@ -29,8 +29,26 @@ inline T& ComponentPool::AddComponent(Entity e, Args&&... args)
 
 	auto storage = m_storage[idx];
 	T comp(std::forward<Args>(args)...);
-	storage->Add(e.index, &comp);
+	storage->PushBack(e.index, &comp);
 	return *static_cast<T*>(storage->Get(e.index));
+}
+
+void ComponentPool::RemoveAllComponents(Entity e)
+{
+	m_masks[e.index].reset();
+
+	for (auto& storage : m_storage) {
+		storage->Erase(e.index);
+	}
+}
+
+template <typename T>
+T& ComponentPool::RemoveComponent(Entity e)
+{
+	auto idx = GetComponentTypeID<T>();
+	m_masks[e.index].reset(idx);
+
+	m_storage[idx]->Erase(e.index);
 }
 
 template <typename T>

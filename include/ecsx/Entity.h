@@ -17,6 +17,7 @@ struct Entity
 	}
 
 	bool IsNull() const { return id == 0; }
+	void Reset() { id = 0; }
 
 	union
 	{

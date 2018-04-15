@@ -27,5 +27,10 @@ Entity EntityPool::Create()
 	return e;
 }
 
+void EntityPool::Destroy(Entity e)
+{
+	m_freelist.push_back(e);
+}
+
 }
 }

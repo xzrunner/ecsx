@@ -18,6 +18,7 @@ public:
 	World() {}
 
 	Entity CreateEntity();
+	void DestroyEntity(Entity e);
 
 	bool IsIdValid(Entity e) const {
 		return m_id_pool.IsValid(e);

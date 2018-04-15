@@ -27,6 +27,10 @@ public:
 
 	template <typename T, typename... Args>
 	T& AddComponent(Entity e, Args&&... args);
+	template <typename T>
+	T& RemoveComponent(Entity e);
+
+	void RemoveAllComponents(Entity e);
 
 	template <typename T>
 	T& GetComponent(Entity e) const;

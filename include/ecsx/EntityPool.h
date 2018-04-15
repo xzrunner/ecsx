@@ -17,6 +17,7 @@ public:
 	EntityPool();
 
 	Entity Create();
+	void Destroy(Entity e);
 
 	bool IsValid(Entity e) const;
 
