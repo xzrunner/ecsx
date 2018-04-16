@@ -33,6 +33,7 @@ inline T& ComponentPool::AddComponent(Entity e, Args&&... args)
 	return *static_cast<T*>(storage->Get(e.index));
 }
 
+inline 
 void ComponentPool::RemoveAllComponents(Entity e)
 {
 	m_masks[e.index].reset();
@@ -43,7 +44,7 @@ void ComponentPool::RemoveAllComponents(Entity e)
 }
 
 template <typename T>
-T& ComponentPool::RemoveComponent(Entity e)
+inline T& ComponentPool::RemoveComponent(Entity e)
 {
 	auto idx = GetComponentTypeID<T>();
 	m_masks[e.index].reset(idx);
