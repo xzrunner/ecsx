@@ -64,7 +64,7 @@ inline void ComponentPool::SetStorage(CompStorageType type)
 {
 	int idx = GetComponentTypeID<T>();
 	if (m_storage[idx]) {
-		delete m_storage[idx];
+		return;
 	}
 
 	IComponentsStorage* storage = nullptr;
