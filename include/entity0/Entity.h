@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ecsx/Config.h"
+#include "entity0/Config.h"
 
-namespace ecsx
+namespace e0
 {
 
 struct Entity

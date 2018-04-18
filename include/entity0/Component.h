@@ -2,7 +2,7 @@
 
 #include <boost/noncopyable.hpp>
 
-namespace ecsx
+namespace e0
 {
 
 using ComponentID = size_t;

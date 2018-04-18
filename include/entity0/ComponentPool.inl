@@ -1,11 +1,11 @@
 #pragma once
 
-#include "ecsx/CompDenseStorage.h"
-#include "ecsx/CompSparseStorage.h"
+#include "entity0/CompDenseStorage.h"
+#include "entity0/CompSparseStorage.h"
 
 #include <guard/check.h>
 
-namespace ecsx
+namespace e0
 {
 namespace detail
 {

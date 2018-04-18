@@ -17,7 +17,7 @@ typedef std::uint32_t ID_VERSION_TYPE;
 #	define ECSX_ENTITY_ID_VERSION_BIT_COUNT 16
 #endif // ECSX_32_BIT_ENTITY_IDS
 
-namespace ecsx
+namespace e0
 {
 
 constexpr const std::size_t MAX_COMPONENTS = 64;

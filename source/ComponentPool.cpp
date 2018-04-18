@@ -1,6 +1,6 @@
-#include "ecsx/ComponentPool.h"
+#include "entity0/ComponentPool.h"
 
-namespace ecsx
+namespace e0
 {
 namespace detail
 {

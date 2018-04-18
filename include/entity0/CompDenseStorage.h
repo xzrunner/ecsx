@@ -1,17 +1,15 @@
 #pragma once
 
-#include "ecsx/IComponentsStorage.h"
-#include "ecsx/Config.h"
+#include "entity0/IComponentsStorage.h"
+#include "entity0/Config.h"
 
-#include <unordered_map>
-
-namespace ecsx
+namespace e0
 {
 namespace detail
 {
 
 template<typename T>
-class CompSparseStorage : public IComponentsStorage
+class CompDenseStorage : public IComponentsStorage
 {
 public:
 	virtual void PushBack(const ID_TYPE& idx, void* data) override;
@@ -22,11 +20,11 @@ public:
 	virtual void Clear() override;
 
 private:
-	std::unordered_map<ID_TYPE, T> m_id2comp;
+	std::vector<T> m_buf;
 
-}; // CompSparseStorage
+}; // CompDenseStorage
 
 }
 }
 
-#include "ecsx/CompSparseStorage.inl"
+#include "entity0/CompDenseStorage.inl"

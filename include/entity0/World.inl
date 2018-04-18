@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ecsx
+namespace e0
 {
 
 template <typename T>

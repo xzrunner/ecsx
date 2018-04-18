@@ -1,15 +1,15 @@
 #pragma once
 
-#include "ecsx/EntityPool.h"
-#include "ecsx/ComponentPool.h"
-#include "ecsx/CompStorageType.h"
-#include "ecsx/Entity.h"
+#include "entity0/EntityPool.h"
+#include "entity0/ComponentPool.h"
+#include "entity0/CompStorageType.h"
+#include "entity0/Entity.h"
 
 #include <boost/noncopyable.hpp>
 
 #include <vector>
 
-namespace ecsx
+namespace e0
 {
 
 class World : boost::noncopyable
@@ -47,4 +47,4 @@ private:
 
 }
 
-#include "ecsx/World.inl"
+#include "entity0/World.inl"

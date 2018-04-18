@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\ecsx\System.h" />
-    <ClInclude Include="..\..\..\include\ecsx\World.h" />
-    <ClInclude Include="..\..\..\include\ecsx\Config.h" />
-    <ClInclude Include="..\..\..\include\ecsx\Entity.h">
+    <ClInclude Include="..\..\..\include\entity0\System.h" />
+    <ClInclude Include="..\..\..\include\entity0\World.h" />
+    <ClInclude Include="..\..\..\include\entity0\Config.h" />
+    <ClInclude Include="..\..\..\include\entity0\Entity.h">
       <Filter>entity</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\Component.h">
+    <ClInclude Include="..\..\..\include\entity0\Component.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\ComponentPool.h">
+    <ClInclude Include="..\..\..\include\entity0\ComponentPool.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\CompDenseStorage.h">
+    <ClInclude Include="..\..\..\include\entity0\CompDenseStorage.h">
       <Filter>component\storage</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\CompSparseStorage.h">
+    <ClInclude Include="..\..\..\include\entity0\CompSparseStorage.h">
       <Filter>component\storage</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\IComponentsStorage.h">
+    <ClInclude Include="..\..\..\include\entity0\IComponentsStorage.h">
       <Filter>component\storage</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\CompStorageType.h">
+    <ClInclude Include="..\..\..\include\entity0\CompStorageType.h">
       <Filter>component\storage</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\ecsx\EntityPool.h">
+    <ClInclude Include="..\..\..\include\entity0\EntityPool.h">
       <Filter>entity</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,17 +50,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\include\ecsx\ComponentPool.inl">
+    <None Include="..\..\..\include\entity0\ComponentPool.inl">
       <Filter>component</Filter>
     </None>
-    <None Include="..\..\..\include\ecsx\World.inl" />
-    <None Include="..\..\..\include\ecsx\CompSparseStorage.inl">
+    <None Include="..\..\..\include\entity0\World.inl" />
+    <None Include="..\..\..\include\entity0\CompSparseStorage.inl">
       <Filter>component\storage</Filter>
     </None>
-    <None Include="..\..\..\include\ecsx\CompDenseStorage.inl">
+    <None Include="..\..\..\include\entity0\CompDenseStorage.inl">
       <Filter>component\storage</Filter>
     </None>
-    <None Include="..\..\..\include\ecsx\EntityPool.inl">
+    <None Include="..\..\..\include\entity0\EntityPool.inl">
       <Filter>entity</Filter>
     </None>
   </ItemGroup>

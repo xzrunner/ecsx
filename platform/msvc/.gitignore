@@ -1,8 +1,8 @@
-ecsx/
-ecsx_test/
+entity0/
+entity0_test/
 projects/*
 
-!projects/ecsx.vcxproj
-!projects/ecsx.vcxproj.filters
-!projects/ecsx_test.vcxproj
-!projects/ecsx_test.vcxproj.filters
+!projects/entity0.vcxproj
+!projects/entity0.vcxproj.filters
+!projects/entity0_test.vcxproj
+!projects/entity0_test.vcxproj.filters

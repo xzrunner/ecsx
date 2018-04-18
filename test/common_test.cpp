@@ -2,15 +2,15 @@
 
 #include <catch/catch.hpp>
 
-#include <ecsx/CompSparseStorage.h>
-#include <ecsx/CompDenseStorage.h>
-#include <ecsx/World.h>
-#include <ecsx/Entity.h>
-#include <ecsx/Component.h>
-#include <ecsx/CompStorageType.h>
+#include <entity0/CompSparseStorage.h>
+#include <entity0/CompDenseStorage.h>
+#include <entity0/World.h>
+#include <entity0/Entity.h>
+#include <entity0/Component.h>
+#include <entity0/CompStorageType.h>
 
 TEST_CASE("test sparse storage") {
-	ecsx::detail::CompSparseStorage<int> storage;
+	e0::detail::CompSparseStorage<int> storage;
 	int i = 0;
 	storage.Add(0, &i);
 	i = 1;
@@ -21,7 +21,7 @@ TEST_CASE("test sparse storage") {
 }
 
 TEST_CASE("test dense storage") {
-	ecsx::detail::CompDenseStorage<int> storage;
+	e0::detail::CompDenseStorage<int> storage;
 	int i = 0;
 	storage.Add(0, &i);
 	i = 1;
@@ -30,7 +30,7 @@ TEST_CASE("test dense storage") {
 	REQUIRE(*static_cast<int*>(storage.Get(10)) == 1);
 }
 
-struct Position : public ecsx::Component
+struct Position : public e0::Component
 {
 	Position() : x(0), y(0) {}
 	Position(float x, float y) : x(x), y(y) {}
@@ -39,9 +39,9 @@ struct Position : public ecsx::Component
 };
 
 TEST_CASE("test component dense") {
-	ecsx::World world;
+	e0::World world;
 
-	world.SetCompStorage<Position>(ecsx::COMP_STORAGE_DENSE);
+	world.SetCompStorage<Position>(e0::COMP_STORAGE_DENSE);
 
 	auto e0 = world.CreateEntity();
 	auto& comp = world.AddComponent<Position>(e0, 1.0f, 2.0f);
@@ -58,9 +58,9 @@ TEST_CASE("test component dense") {
 }
 
 TEST_CASE("test component sparse") {
-	ecsx::World world;
+	e0::World world;
 
-	world.SetCompStorage<Position>(ecsx::COMP_STORAGE_SPARSE);
+	world.SetCompStorage<Position>(e0::COMP_STORAGE_SPARSE);
 
 	auto e0 = world.CreateEntity();
 	auto& comp = world.AddComponent<Position>(e0, 1.0f, 2.0f);

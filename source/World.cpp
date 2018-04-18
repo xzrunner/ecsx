@@ -1,6 +1,6 @@
-#include "ecsx/World.h"
+#include "entity0/World.h"
 
-namespace ecsx
+namespace e0
 {
 
 Entity World::CreateEntity()

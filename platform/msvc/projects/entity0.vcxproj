@@ -11,32 +11,46 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\test\common_test.cpp" />
+    <ClInclude Include="..\..\..\include\entity0\CompDenseStorage.h" />
+    <ClInclude Include="..\..\..\include\entity0\Component.h" />
+    <ClInclude Include="..\..\..\include\entity0\ComponentPool.h" />
+    <ClInclude Include="..\..\..\include\entity0\CompSparseStorage.h" />
+    <ClInclude Include="..\..\..\include\entity0\CompStorageType.h" />
+    <ClInclude Include="..\..\..\include\entity0\Config.h" />
+    <ClInclude Include="..\..\..\include\entity0\Entity.h" />
+    <ClInclude Include="..\..\..\include\entity0\EntityPool.h" />
+    <ClInclude Include="..\..\..\include\entity0\IComponentsStorage.h" />
+    <ClInclude Include="..\..\..\include\entity0\System.h" />
+    <ClInclude Include="..\..\..\include\entity0\World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\guard\platform\msvc\projects\guard.vcxproj">
-      <Project>{cc45ae0e-8c51-4759-9614-8bc321c565a0}</Project>
-    </ProjectReference>
-    <ProjectReference Include="ecsx.vcxproj">
-      <Project>{5dcdf0b6-9fbf-4ca8-8276-a66236ae8fe6}</Project>
-    </ProjectReference>
+    <ClCompile Include="..\..\..\source\ComponentPool.cpp" />
+    <ClCompile Include="..\..\..\source\EntityPool.cpp" />
+    <ClCompile Include="..\..\..\source\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\include\entity0\CompDenseStorage.inl" />
+    <None Include="..\..\..\include\entity0\ComponentPool.inl" />
+    <None Include="..\..\..\include\entity0\CompSparseStorage.inl" />
+    <None Include="..\..\..\include\entity0\EntityPool.inl" />
+    <None Include="..\..\..\include\entity0\World.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>3.ecsx_test</ProjectName>
-    <ProjectGuid>{C8504C2B-AA09-496A-8D17-C2A9215A90C3}</ProjectGuid>
-    <RootNamespace>ecsx_test</RootNamespace>
+    <ProjectName>3.entity0</ProjectName>
+    <ProjectGuid>{5DCDF0B6-9FBF-4CA8-8276-A66236AE8FE6}</ProjectGuid>
+    <RootNamespace>entity0</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -54,17 +68,17 @@
     <_ProjectFileVersion>15.0.26730.12</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\ecsx_test\x86\Debug\</OutDir>
-    <IntDir>..\ecsx_test\x86\Debug\obj\</IntDir>
+    <OutDir>..\entity0\x86\Debug\</OutDir>
+    <IntDir>..\entity0\x86\Debug\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\ecsx_test\x86\Release\</OutDir>
-    <IntDir>..\ecsx_test\x86\Release\obj\</IntDir>
+    <OutDir>..\entity0\x86\Release\</OutDir>
+    <IntDir>..\entity0\x86\Release\obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\..\sm\src\sm;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\external\catch\include;..\..\..\..\external\boost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\..\sm\src\sm;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\external\rapidjson\include;..\..\..\..\external\boost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;__STDC_LIMIT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -73,15 +87,12 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\..\sm\src\sm;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\external\catch\include;..\..\..\..\external\boost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\..\sm\src\sm;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\external\rapidjson\include;..\..\..\..\external\boost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;__STDC_LIMIT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>

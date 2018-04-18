@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ecsx/Entity.h"
-#include "ecsx/Component.h"
-#include "ecsx/CompStorageType.h"
+#include "entity0/Entity.h"
+#include "entity0/Component.h"
+#include "entity0/CompStorageType.h"
 
 #include <boost/noncopyable.hpp>
 
@@ -10,7 +10,7 @@
 #include <vector>
 #include <array>
 
-namespace ecsx
+namespace e0
 {
 namespace detail
 {
@@ -49,4 +49,4 @@ private:
 }
 }
 
-#include "ecsx/ComponentPool.inl"
+#include "entity0/ComponentPool.inl"

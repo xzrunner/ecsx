@@ -1,12 +1,12 @@
 #pragma once
 
-#include "ecsx/Entity.h"
+#include "entity0/Entity.h"
 
 #include <boost/noncopyable.hpp>
 
 #include <vector>
 
-namespace ecsx
+namespace e0
 {
 namespace detail
 {
@@ -33,4 +33,4 @@ private:
 }
 }
 
-#include "ecsx/EntityPool.inl"
+#include "entity0/EntityPool.inl"
