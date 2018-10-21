@@ -51,7 +51,7 @@ TEST_CASE("test component dense") {
 	auto& comp1 = world.GetComponent<Position>(e0);
 	REQUIRE(Approx(comp1.x) == 1.0f);
 	REQUIRE(Approx(comp1.y) == 2.0f);
-	
+
 	comp1.x = 3;
 	auto& comp2 = world.GetComponent<Position>(e0);
 	REQUIRE(Approx(comp1.x) == 3.0f);

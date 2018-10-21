@@ -42,7 +42,7 @@ private:
 	detail::EntityPool m_id_pool;
 
 	detail::ComponentPool m_comp_pool;
-	
+
 }; // World
 
 }

@@ -21,7 +21,7 @@ struct Entity
 
 	union
 	{
-		struct 
+		struct
 		{
 			ID_TYPE index   : ECSX_ENTITY_ID_INDEX_BIT_COUNT;
 			ID_TYPE version : ECSX_ENTITY_ID_VERSION_BIT_COUNT;

@@ -13,7 +13,7 @@ namespace detail
 template <typename T>
 inline bool ComponentPool::HasComponent(Entity e) const
 {
-	return e.index >= 0 && e.index < m_masks.size() 
+	return e.index >= 0 && e.index < m_masks.size()
 		&& m_masks[e.index][GetComponentTypeID<T>()];
 }
 
@@ -33,7 +33,7 @@ inline T& ComponentPool::AddComponent(Entity e, Args&&... args)
 	return *static_cast<T*>(storage->Get(e.index));
 }
 
-inline 
+inline
 void ComponentPool::RemoveAllComponents(Entity e)
 {
 	m_masks[e.index].reset();
