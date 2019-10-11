@@ -12,9 +12,9 @@
 TEST_CASE("test sparse storage") {
 	e0::detail::CompSparseStorage<int> storage;
 	int i = 0;
-	storage.Add(0, &i);
+	storage.PushBack(0, &i);
 	i = 1;
-	storage.Add(10, &i);
+	storage.PushBack(10, &i);
 	REQUIRE(*static_cast<int*>(storage.Get(0)) == 0);
 	REQUIRE(*static_cast<int*>(storage.Get(10)) == 1);
 	REQUIRE(!storage.Get(5));
@@ -23,9 +23,9 @@ TEST_CASE("test sparse storage") {
 TEST_CASE("test dense storage") {
 	e0::detail::CompDenseStorage<int> storage;
 	int i = 0;
-	storage.Add(0, &i);
+	storage.PushBack(0, &i);
 	i = 1;
-	storage.Add(10, &i);
+	storage.PushBack(10, &i);
 	REQUIRE(*static_cast<int*>(storage.Get(0)) == 0);
 	REQUIRE(*static_cast<int*>(storage.Get(10)) == 1);
 }
